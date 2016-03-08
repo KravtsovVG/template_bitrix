@@ -1,0 +1,11 @@
+.idea/
+awstats
+bitrix/
+logs/
+node_modules/
+tmp/
+upload/
+
+
+composer.phar
+composer.lock
