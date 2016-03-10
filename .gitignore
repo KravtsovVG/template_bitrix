@@ -1,11 +1,14 @@
 .idea/
-awstats
-bitrix/
 logs/
 node_modules/
-tmp/
-upload/
 
+public_html/awstats/
+public_html/bitrix/
+public_html/vendor/
+public_html/tmp/
+public_html/upload/
 
+access_lo*
+error_lo*
 composer.phar
 composer.lock
