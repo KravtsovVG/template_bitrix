@@ -112,7 +112,7 @@ gulp.task('css', function () {
 	let task_name = 'css';
 	let resolver = require('stylus').resolver;
 	return gulp.src('local/dev/css/**/styles.styl')
-			.pipe(lp.cached(task_name))
+			//.pipe(lp.cached(task_name))
 			.pipe(lp.if(isDevelopment, lp.sourcemaps.init()))
 			.pipe(lp.stylus({
 				define: {
