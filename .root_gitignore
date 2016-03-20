@@ -1,9 +1,0 @@
-access_lo*
-error_lo*
-composer.phar
-composer.lock
-logs
-.idea
-node_modules
-tmp
-vendor

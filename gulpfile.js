@@ -26,16 +26,17 @@ const combiner = require('stream-combiner2').obj; // объединение це
  */
 
 const input = {
-	js: 'local/dev/js/**/*.js',
-	css: 'local/dev/css/**/*.styl',
-	images: 'local/dev/i/**/*.{png,jpg,jpeg,svg}'
-	// files: 'local/dev/files'
+	js: 'dev/js/**/*.js',
+	css: 'dev/css/**/*.styl',
+	'main_css': 'dev/css/**/styles.styl',
+	images: 'dev/i/**/*.{png,jpg,jpeg,svg}'
+	// files: 'dev/files'
 };
 const output = {
-	js: 'js',
-	css: 'css',
-	images: 'i'
-	// files: 'files'
+	js: 'public_html/js',
+	css: 'public_html/css',
+	images: 'public_html/i'
+	// files: 'public_html/files'
 };
 
 const MANIFEST = 'manifest';
@@ -211,14 +212,3 @@ gulp.task('dev',
 gulp.task('default',
 		gulp.series('dev')
 );
-
-/*
- gulp.task('default', function () {
- return gulp.src('local/dev/i/!**', {since: gulp.lastRun('image')})
- .pipe(lp.cached('image'))
- .pipe(lp.newer('i'))
- .pipe(lp.If(function (file) {
- return file.extname == '.jpg' || file.extname == '.jpeg' || file.extname == '.png' || file.extname == '.gif';
- }, lp.imagemin()))
- .pipe(gulp.dest('i'));
- });*/

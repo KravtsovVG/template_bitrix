@@ -6,9 +6,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
 <?
-$path = $_SERVER['DOCUMENT_ROOT'] . '/local/manifest/js.json';
+$path_root = preg_replace('/(^.+?)\/public_html\/.*/i', '$1', __FILE__);
+$path = $path_root . '/manifest/js.json';
 if (file_exists($path)) {
-	$arJs = json_decode(file_get_contents('/local/manifest/js.json'), true);
+	$arJs = json_decode(file_get_contents($path), true);
 	foreach ($arJs as $js) {
 		echo '<script src="/js/' . $js . '"></script>';
 	}
